@@ -29,6 +29,6 @@ public class Car {
     @Column(name = "mileage", nullable = false)
     private int mileage;
 
-    @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "car")
+    @OneToMany(cascade = CascadeType.REMOVE, mappedBy = "car")
     private List<Rent> rents;
 }

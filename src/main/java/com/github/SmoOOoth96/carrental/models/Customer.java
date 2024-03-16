@@ -20,6 +20,6 @@ public class Customer {
     @Column(name = "phone_number", nullable = false)
     private int phoneNumber;
 
-    @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "customer")
+    @OneToMany(cascade = CascadeType.REMOVE, mappedBy = "customer")
     private List<Rent> rents;
 }
