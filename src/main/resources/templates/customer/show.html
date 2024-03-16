@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer</title>
+</head>
+<body>
+
+<p th:text="${customer.getName()}">VALUE</p>
+<p th:text="${customer.getPhoneNumber()}">VALUE</p>
+
+<div th:each="rent : ${rentList}">
+    <a th:href="@{/cars/{id}(id=${rent.getCar().getId()})}" th:text="${rent.getCar().getBrand()} + ' | ' + ${rent.getCar().getModel()} + ' | ' + ${rent.getCar().getYear()} + ' | ' + ${rent.getCar().getColor()} + ' | ' + ${rent.getCar().getMileage()}">Car</a>
+</div>
+
+<br/>
+
+<a th:href="@{/customers/{id}/edit(id=${customer.getId()})}">Edit</a>
+
+<br/>
+<br/>
+
+<form th:method="DELETE" th:action="@{/customers/{id}(id=${customer.getId()})}">
+    <input type="submit" value="Delete">
+</form>
+
+</body>
+</html>

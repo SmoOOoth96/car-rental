@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Rent</title>
+</head>
+<body>
+
+<p th:text="${customer.getName()} + ' | ' + ${customer.getPhoneNumber()}">VALUE</p>
+<p th:text="${car.getBrand()} + ' | ' + ${car.getModel()} + ' | ' + ${car.getYear()} + ' | ' + ${car.getColor()} + ' | ' + ${car.getMileage()}">VALUE</p>
+
+</body>
+</html>

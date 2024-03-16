@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New Rent</title>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/rents}" th:object="${rent}">
+    <select th:field="*{customer}" name="customer" id="customer">
+        <option value="">Select customer</option>
+        <option th:each="customer : ${customerList}"
+                th:value="${customer.getId()}"
+                th:text="${customer.getName()}"></option>
+    </select>
+    <br/>
+    <br/>
+    <select th:field="*{car}" name="car" id="car">
+        <option value="">Select car</option>
+        <option th:each="car : ${carList}"
+                th:value="${car.getId()}"
+                th:text="${car.getBrand()} + ' | ' + ${car.getModel()} + ' | ' + ${car.getYear()} + ' | ' + ${car.getColor()} + ' | ' + ${car.getMileage()}"></option>
+    </select>
+    <br/>
+    <br/>
+    <input type="submit" value="Create">
+</form>
+
+</body>
+</html>

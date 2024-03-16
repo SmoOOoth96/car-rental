@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All Rents</title>
+</head>
+<body>
+
+<div th:each="rent : ${rentList}">
+    <a th:href="@{/rents/{id}(id=${rent.getId()})}" th:text="${rent.getCustomer().getName()} + ' | ' + ${rent.getCar().getBrand()}">Rent</a>
+</div>
+
+<br/>
+<hr/>
+
+<a th:href="@{/rents/new}">Create new rent</a>
+
+</body>
+</html>
